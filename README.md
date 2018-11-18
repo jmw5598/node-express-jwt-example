@@ -2,6 +2,28 @@
 
 An example project implementing JWT authentication and role based authorization.
 
+### Demo Setup
+1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+2. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+3. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+
+### Default Credentials
+
+| Username | Password | Description |
+| - | - | - |
+| admin | admin | User with `ADMIN` and `USER` roles. |
+| user | user | User with only `USER` role. |
+
+### Default Routes
+
+| Path | Method | Description |
+| `/users` | `GET` | List all users [requires ADMIN role] |
+| `/users` | `POST` | Create new user [requires ADMIN role] |
+| `/api/v1/restricted/usersOnly` | `GET` | Users only path |
+| `/api/v1/restricted/adminOnly` | `GET` | Admin only path |
+
+
 ### Middleware Methods
 
 | Method | Description |
