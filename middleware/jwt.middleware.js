@@ -31,7 +31,7 @@ class JwtMiddleware {
     }
   }
 
-  hasAnyRole(role) {
+  hasAnyRole(roles) {
     return (req, res, next) => {
       const bearer = req.header('Authorization') || '';
       const token = bearer.split(' ')[1];
