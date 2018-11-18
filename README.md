@@ -18,6 +18,7 @@ An example project implementing JWT authentication and role based authorization.
 ### Default Routes
 
 | Path | Method | Description |
+| - | - | - |
 | `/users` | `GET` | List all users [requires ADMIN role] |
 | `/users` | `POST` | Create new user [requires ADMIN role] |
 | `/api/v1/restricted/usersOnly` | `GET` | Users only path |
