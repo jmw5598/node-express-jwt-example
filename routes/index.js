@@ -1,6 +1,6 @@
 'use strict';
 
-const ApiV1Router = require('./api-v1.router');
+const ApiV1Router = require('./api-v1');
 const AuthenticationRouter = require('./authentication.router');
 const UsersRouter = require('./users.router');
 
