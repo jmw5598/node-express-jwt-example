@@ -1,3 +1,5 @@
+'use strict';
+
 class ApiV1Controller {
 
   constructor() {}
