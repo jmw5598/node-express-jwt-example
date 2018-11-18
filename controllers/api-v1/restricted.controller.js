@@ -1,6 +1,6 @@
 'use strict';
 
-class ApiV1Controller {
+class RestrictedController {
 
   constructor() {}
 
@@ -14,4 +14,4 @@ class ApiV1Controller {
 
 }
 
-module.exports = new ApiV1Controller();
+module.exports = new RestrictedController();
