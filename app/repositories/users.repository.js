@@ -27,7 +27,7 @@ class UsersRepository {
         model: Role, as: 'roles', attributes: ['role'],
         through: { attributes: [] }
       }]
-    })
+    });
   }
 
   save(user) {
