@@ -4,7 +4,7 @@ An example project implementing JWT authentication and role based authorization.
 
 ### Demo Setup
 1. Clone the repository with `git clone https://github.com/jmw5598/node-express-jwt-example.git`
-2. Generate RSA256 public private keys and place them in the `config` name `public.key` and `private.key`.  A 512bit key size should be fine.
+2. Generate RSA256 public private keys and place them in the `config` folder with file names `public.key` and `private.key`.  A 512bit key size should be fine.
     - [Online RSA Key Generator][1]
 3. Install dependencies with `npm install`.
 4. Run migrations and seed that Sqlite database with `sequelize db:migrate` and `sequelize db:seed:all`.
