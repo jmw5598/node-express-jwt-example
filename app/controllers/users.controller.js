@@ -9,10 +9,7 @@ class UsersController {
   list(req, res) {
     return UsersRepository.findAll()
       .then(users => res.status(200).send(users))
-      .catch((error) => res.status(400).send({
-        error: error.toString() ,
-        message: "Error processing your request"
-      }));
+      .catch((error) => res.status(400).send({ error: "Error processing your request" }));
   }
 
   create(req, res) {

@@ -8,7 +8,7 @@ class JwtMiddleware {
     const bearer = req.header('Authorization') || '';
     const token = bearer.split(' ')[1];
     const valid = JwtService.verify(token);
-    return valid ? next() : res.status(401).send({ message: 'Unauthorized' });
+    return valid ? next() : res.status(401).send({ error: 'Unauthorized' });
   }
 
   hasRole(role) {
@@ -17,7 +17,7 @@ class JwtMiddleware {
       const token = bearer.split(' ')[1];
       const decoded = JwtService.decode(token);
       const foundRole = decoded.payload.roles.find(e => e.role === role);
-      return foundRole ? next() : res.status(403).send({ message: 'Access Denied' });
+      return foundRole ? next() : res.status(403).send({ error: 'Access Denied' });
     }
   }
 
@@ -27,7 +27,7 @@ class JwtMiddleware {
       const token = bearer.split(' ')[1];
       const decoded = JwtService.decode(token);
       const foundAllRole = roles.every(e => decoded.payload.roles.find(i => i.role === e));
-      return foundAllRoles ? next() : res.status(403).send({ message: 'Access Denied' });
+      return foundAllRoles ? next() : res.status(403).send({ error: 'Access Denied' });
     }
   }
 
@@ -37,7 +37,7 @@ class JwtMiddleware {
       const token = bearer.split(' ')[1];
       const decoded = JwtService.decode(token);
       const foundAnyRole = roles.some(e => decoded.payload.roles.find(i => i.role === e));
-      return foundAnyRole ? next() : res.status(403).send({ message: 'Access Denied' });
+      return foundAnyRole ? next() : res.status(403).send({ error: 'Access Denied' });
     }
   }
 

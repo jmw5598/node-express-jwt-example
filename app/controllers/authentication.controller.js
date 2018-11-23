@@ -20,7 +20,7 @@ class AuthenticationController {
         return bcrypt.compare(password, user.dataValues.password);
       else
         throw err;
-    }); 
+    });
 
     return Promise.all([user, valid])
       .then(([user, valid]) => {
@@ -31,7 +31,7 @@ class AuthenticationController {
           throw err;
         }
       })
-      .catch((error) => res.status(401).send({ message: 'Invalid username/password' }));
+      .catch((error) => res.status(401).send({ error: 'Invalid username/password' }));
   }
 
 }
