@@ -4,8 +4,9 @@ const express = require('express');
 const RestrictedRouter = express.Router();
 
 const { RestrictedController } = require('../../app/controllers');
+const { JwtMiddleware } = require('../../app/middleware');
 
-RestrictedRouter.get('/adminOnly', RestrictedController.adminOnly);
-RestrictedRouter.get('/usersOnly', RestrictedController.usersOnly);
+RestrictedRouter.get('/adminOnly', JwtMiddleware.hasRole('ADMIN'), RestrictedController.adminOnly);
+RestrictedRouter.get('/usersOnly', JwtMiddleware.hasRole('USER'), RestrictedController.usersOnly);
 
 module.exports = RestrictedRouter;
