@@ -3,6 +3,10 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const yaml = require('yamljs');
+
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = yaml.load('./swagger/swagger.yaml');
 
 const { ApiV1Router, AuthenticationRouter, UsersRouter } = require('./routes');
 const { JwtMiddleware } = require('./app/middleware');
@@ -19,6 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/api/v1', JwtMiddleware.verify, ApiV1Router);
 app.use('/auth', AuthenticationRouter);
 app.use('/users', JwtMiddleware.verify, UsersRouter);
