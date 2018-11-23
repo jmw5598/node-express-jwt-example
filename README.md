@@ -3,10 +3,12 @@
 An example project implementing JWT authentication and role based authorization.
 
 ### Demo Setup
-1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-2. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-3. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-
+1. Clone the repository with `git clone https://github.com/jmw5598/node-express-jwt-example.git`
+2. Generate RSA256 public private keys and place them in the `config` name `public.key` and `private.key`.  A 512bit key size should be fine.
+    - [Online RSA Key Generator][1]
+3. Install dependencies with `npm install`.
+4. Run migrations and seed that Sqlite database with `sequelize db:migrate` and `sequelize db:seed:all`.
+5. Run the project with `node app.js`.
 
 ### Default Credentials
 
@@ -33,3 +35,6 @@ An example project implementing JWT authentication and role based authorization.
 | `hasRole(role)` | Ensures the authenticated user has appropriate role |
 | `hasAnyRole([role, role])` | Ensures the authenticated user has ANY of the appropriate roles |
 | `hasAllRoles([role, role])` | Ensures the authenticated user has ALL the appropriate roles |
+
+
+[1]: http://travistidwell.com/jsencrypt/demo/
