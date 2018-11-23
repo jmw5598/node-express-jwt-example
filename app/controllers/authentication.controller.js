@@ -20,7 +20,7 @@ class AuthenticationController {
         return bcrypt.compare(password, user.dataValues.password);
       else
         throw err;
-    }).catch((error) => console.log("error: " + error));
+    });
 
     return Promise.all([user, valid])
       .then(([user, valid]) => {
