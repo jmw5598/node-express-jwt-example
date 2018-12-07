@@ -46,11 +46,7 @@ class UsersRepository {
 
   save(user) {
     return User.build(user).save()
-      .then((user) => {
-        user.addRoles([1]);
-        console.log(user);
-        return user;
-      })
+      .then((user) => user)
       .catch((error) => new Promise((resolve, reject) => reject(error)));
   }
 
