@@ -6,8 +6,9 @@ const logger = require('morgan');
 const yaml = require('yamljs');
 const cors = require('cors');
 
-const { ApiV1Router, AuthenticationRouter, UsersRouter } = require('./routes');
-const { JwtMiddleware } = require('./app/middleware');
+const Router = require('./server/routes');
+
+const { JwtMiddleware } = require('./server/middleware');
 
 const app = express();
 
@@ -22,9 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api/v1', JwtMiddleware.verify, ApiV1Router);
-app.use('/auth', AuthenticationRouter);
-app.use('/users', JwtMiddleware.verify, UsersRouter);
+app.use('/', Router);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
