@@ -3,7 +3,7 @@
 const express = require('express');
 const RestrictedRouter = express.Router();
 
-const { RestrictedController } = require('../../../controllers');
+const { RestrictedController } = require('../../../controllers').ApiControllers.V1;
 const { JwtMiddleware } = require('../../../middleware');
 
 RestrictedRouter.get('/adminOnly', JwtMiddleware.hasRole('ADMIN'), RestrictedController.adminOnly);

@@ -2,10 +2,10 @@
 
 const AuthenticationController = require('./authentication.controller');
 const UsersController = require('./users.controller');
-const { RestrictedController } = require('./api-v1');
+const ApiControllers = require('./api');
 
 module.exports = {
+  ApiControllers,
   AuthenticationController,
-  RestrictedController,
   UsersController
 };

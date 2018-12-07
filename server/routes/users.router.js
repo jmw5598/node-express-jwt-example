@@ -3,8 +3,8 @@
 const express = require('express');
 const UsersRouter = express.Router();
 
-const { UsersController } = require('../app/controllers');
-const { JwtMiddleware } = require('../app/middleware');
+const { UsersController } = require('../controllers');
+const { JwtMiddleware } = require('../middleware');
 
 UsersRouter.route('/')
   .get(JwtMiddleware.hasRole('ADMIN'), UsersController.list)
