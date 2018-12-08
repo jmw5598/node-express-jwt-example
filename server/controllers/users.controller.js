@@ -18,10 +18,7 @@ class UsersController {
 
     return UsersRepository.save(user)
       .then((user) => UsersRepository.findById(user.dataValues.id))
-      .then((user) => res.status(201).send({
-        message: 'Successfully created new user',
-        payload: user.dataValues
-      }))
+      .then((user) => res.status(201).send(user))
       .catch((error) => res.status(400).send({ error: 'Error creating new user' }));
   }
 

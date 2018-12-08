@@ -16,14 +16,8 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
     hooks: {
       beforeCreate: (user, options) => {
-        return new Promise((resolve, reject) => {
-          bcrypt.hash(user.password, 10)
-            .then(hash => {
-              user.password = hash;
-              user.addRole([1]);
-              resolve(user);
-            })
-          });
+        user.password = bcrypt.hashSync(user.password, 10);
+        user.addRole([1]);
       }
     }
   });

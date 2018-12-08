@@ -21,7 +21,7 @@ class UsersRepository {
   }
 
   findById(id) {
-    return User.findById(id, {
+    return User.findByPk(id, {
       include: [{
         model: Role,
         as: 'roles',
