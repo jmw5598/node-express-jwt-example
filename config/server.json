@@ -1,0 +1,11 @@
+{
+  "development": {
+    "env": "dev",
+    "hostname": "localhost",
+    "port": "3000",
+    "viewDir": "./app/views",
+    "staticDir": "./app/public"
+  },
+  "test": {},
+  "production": {}
+}
