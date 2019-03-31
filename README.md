@@ -8,7 +8,7 @@ An example project implementing JWT authentication and role based authorization.
     - [Online RSA Key Generator][1]
 3. Install dependencies with `npm install`.
 4. Run migrations and seed that Sqlite database with `sequelize db:migrate` and `sequelize db:seed:all`.
-5. Run the project with `node app.js`.
+5. Run the project with `node index.js`.
 
 ### Default Credentials
 
